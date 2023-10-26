@@ -19,9 +19,9 @@ pipeline {
                 }
             }
         }
-        stage('Third Stage') {
+        stage('Download Java Code') {
             steps {
-                echo "Third stage"
+                git branch: 'main', credentialsId: 'git-repo-creds', url: 'git@github.com:Shavejansari/java-jenkins-repo.git'
             }
         }
     }
