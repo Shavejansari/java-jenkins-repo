@@ -24,5 +24,12 @@ pipeline {
                 git branch: 'main', credentialsId: 'git-repo-creds', url: 'git@github.com:Shavejansari/java-jenkins-repo.git'
             }
         }
+        stage('Compiling and Running Test Cases') {
+            steps {
+                sh 'mvn clean'
+                sh 'mvn compile'
+                sh 'mvn test'
+            }
+        }
     }
 }
